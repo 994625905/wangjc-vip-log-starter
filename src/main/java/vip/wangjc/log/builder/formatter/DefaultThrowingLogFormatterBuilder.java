@@ -6,7 +6,7 @@ import vip.wangjc.log.entity.LogMethodEntity;
 /**
  * @author wangjc
  * @title: DefaultThrowingLogFormatterBuilder
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/5 - 19:35
  */
 public class DefaultThrowingLogFormatterBuilder extends AbstractThrowingLogFormatterBuilder {

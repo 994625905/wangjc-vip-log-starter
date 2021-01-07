@@ -4,7 +4,7 @@ package vip.wangjc.log.entity;
  * 日志级别
  * @author wangjc
  * @title: LogLevel
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/4 - 14:48
  */
 public enum LogLevel {

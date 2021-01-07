@@ -10,7 +10,7 @@ import vip.wangjc.log.builder.callback.DefaultLogCallbackBuilder;
  * 异常日志的配置文件
  * @author wangjc
  * @title: LogProperties
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/5 - 10:22
  */
 @ConfigurationProperties(prefix = "vip.wangjc.log.throw")

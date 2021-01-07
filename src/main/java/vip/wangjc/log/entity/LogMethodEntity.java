@@ -6,7 +6,7 @@ import java.util.List;
  * 日志方法的实体
  * @author wangjc
  * @title: LogMethodEntity
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/4 - 14:38
  */
 public class LogMethodEntity {

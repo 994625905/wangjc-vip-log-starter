@@ -9,7 +9,7 @@ import vip.wangjc.log.template.LogTemplate;
  * 全局日志的切面拦截器
  * @author wangjc
  * @title: LogInterceptor
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/5 - 16:59
  */
 public class LogInterceptor implements MethodInterceptor {

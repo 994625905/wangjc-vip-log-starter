@@ -9,7 +9,7 @@ import vip.wangjc.log.template.LogTemplate;
  * 参数日志的切面拦截器
  * @author wangjc
  * @title: LogParamInterceptor
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/5 - 17:13
  */
 public class LogParamInterceptor implements MethodInterceptor {

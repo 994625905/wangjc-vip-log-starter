@@ -12,10 +12,10 @@ import vip.wangjc.log.entity.LogPosition;
  * 全局日志的配置文件
  * @author wangjc
  * @title: LogProperties
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/5 - 10:22
  */
-@ConfigurationProperties(prefix = "vip.wangjc.log.global")
+@ConfigurationProperties(prefix = "vip.wangjc.log.around")
 public class LogProperties {
 
     /**

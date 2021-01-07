@@ -7,7 +7,7 @@ import vip.wangjc.log.entity.LogMethodEntity;
  * 参数日志格式化的构建器
  * @author wangjc
  * @title: ParamLogFormatterBuilder
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/4 - 19:58
  */
 public abstract class AbstractParamLogFormatterBuilder extends BaseAbstractLogFormatter {

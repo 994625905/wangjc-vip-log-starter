@@ -35,7 +35,7 @@ import java.util.List;
 /**
  * @author wangjc
  * @title: LogTemplate
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/5 - 10:49
  */
 public class LogTemplate {

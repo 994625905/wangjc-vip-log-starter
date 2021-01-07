@@ -17,7 +17,7 @@ import vip.wangjc.log.template.LogTemplate;
  * 日志的自动化配置
  * @author wangjc
  * @title: LogAutoConfiguration
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/5 - 10:43
  */
 @Configuration

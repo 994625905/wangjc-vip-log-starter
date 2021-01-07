@@ -11,7 +11,7 @@ import java.lang.annotation.*;
  * 异常日志
  * @author wangjc
  * @title: LogThrowing
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/5 - 10:25
  */
 @Target({ElementType.METHOD})

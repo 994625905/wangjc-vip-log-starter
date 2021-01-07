@@ -13,7 +13,7 @@ import java.lang.annotation.*;
  * 结果日志
  * @author wangjc
  * @title: LogResult
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/4 - 20:02
  */
 @Target({ElementType.METHOD})

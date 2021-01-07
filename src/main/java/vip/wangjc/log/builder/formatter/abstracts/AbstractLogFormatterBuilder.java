@@ -7,7 +7,7 @@ import vip.wangjc.log.entity.LogMethodEntity;
  * 日志格式化的构建器
  * @author wangjc
  * @title: LogFilterBuilder
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/4 - 15:25
  */
 public abstract class AbstractLogFormatterBuilder extends BaseAbstractLogFormatter{
@@ -40,7 +40,7 @@ public abstract class AbstractLogFormatterBuilder extends BaseAbstractLogFormatt
     public StringBuffer createLogInfoBuffer(String name, LogMethodEntity entity){
         StringBuffer buffer = this.createInfoBuffer(name, entity);
 
-        buffer.insert(0,"全局日志");
+        buffer.insert(0,"环绕日志");
         return buffer;
     }
 }

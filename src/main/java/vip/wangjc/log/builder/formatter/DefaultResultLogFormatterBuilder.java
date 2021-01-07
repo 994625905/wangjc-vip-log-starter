@@ -8,7 +8,7 @@ import vip.wangjc.log.util.LogUtil;
 /**
  * @author wangjc
  * @title: DefaultResultLogFormatterBuilder
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/4 - 20:05
  */
 public class DefaultResultLogFormatterBuilder extends AbstractResultLogFormatterBuilder {

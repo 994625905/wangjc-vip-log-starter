@@ -6,7 +6,7 @@ import vip.wangjc.log.entity.LogMethodEntity;
  * 异常日志格式化的构建器
  * @author wangjc
  * @title: AbstractThrowingLogFormatterBuilder
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/5 - 19:33
  */
 public abstract class AbstractThrowingLogFormatterBuilder extends BaseAbstractLogFormatter{

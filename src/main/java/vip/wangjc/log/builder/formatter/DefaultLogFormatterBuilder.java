@@ -9,7 +9,7 @@ import vip.wangjc.log.util.LogUtil;
  * 默认综合日志格式化实现
  * @author wangjc
  * @title: DefaultLogFilterBuilder
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/4 - 15:31
  */
 public class DefaultLogFormatterBuilder extends AbstractLogFormatterBuilder {

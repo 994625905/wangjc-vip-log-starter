@@ -13,7 +13,7 @@ import vip.wangjc.log.annotation.LogThrowing;
  * 异常日志的aop通知
  * @author wangjc
  * @title: LogThrowingAnnotationAdvisor
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/5 - 17:30
  */
 public class LogThrowingAnnotationAdvisor extends AbstractPointcutAdvisor implements BeanFactoryAware {

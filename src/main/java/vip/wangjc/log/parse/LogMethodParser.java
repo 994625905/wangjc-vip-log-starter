@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * @author wangjc
  * @title: LogMethodParser
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/5 - 14:11
  */
 public class LogMethodParser {

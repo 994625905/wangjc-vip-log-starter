@@ -8,7 +8,7 @@ import vip.wangjc.log.entity.LogMethodEntity;
 /**
  * @author wangjc
  * @title: BaseAbstractLogFormatter
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/5 - 19:08
  */
 public abstract class BaseAbstractLogFormatter {

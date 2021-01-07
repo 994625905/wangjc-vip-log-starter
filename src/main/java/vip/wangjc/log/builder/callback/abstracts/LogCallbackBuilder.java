@@ -9,7 +9,7 @@ import java.util.Map;
  * 日志回调的构建器
  * @author wangjc
  * @title: LogCallbackBuilder
- * @projectName wangjc-vip
+ * @projectName wangjc-vip-log-starter
  * @date 2021/1/4 - 19:43
  */
 public abstract class LogCallbackBuilder {
