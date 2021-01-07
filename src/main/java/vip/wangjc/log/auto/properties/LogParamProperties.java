@@ -1,15 +1,15 @@
 package vip.wangjc.log.auto.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import vip.wangjc.log.builder.formatter.abstracts.AbstractParamLogFormatterBuilder;
-import vip.wangjc.log.builder.callback.abstracts.LogCallbackBuilder;
 import vip.wangjc.log.builder.callback.DefaultLogCallbackBuilder;
+import vip.wangjc.log.builder.callback.abstracts.LogCallbackBuilder;
 import vip.wangjc.log.builder.formatter.DefaultParamLogFormatterBuilder;
+import vip.wangjc.log.builder.formatter.abstracts.AbstractParamLogFormatterBuilder;
 import vip.wangjc.log.entity.LogLevel;
 import vip.wangjc.log.entity.LogPosition;
 
 /**
- * 参数日志的配置文件
+ * 全局：参数日志的配置文件
  * @author wangjc
  * @title: LogProperties
  * @projectName wangjc-vip-log-starter
@@ -19,22 +19,22 @@ import vip.wangjc.log.entity.LogPosition;
 public class LogParamProperties {
 
     /**
-     * 参数日志级别：默认info
+     * 全局：参数日志级别：默认info
      */
     private LogLevel level = LogLevel.info;
 
     /**
-     * 参数日志的代码定位
+     * 全局：参数日志的代码定位
      */
     private LogPosition position = LogPosition.ON;
 
     /**
-     * 参数日志的格式化构建器
+     * 全局：参数日志的格式化构建器
      */
     private Class<? extends AbstractParamLogFormatterBuilder> formatter = DefaultParamLogFormatterBuilder.class;
 
     /**
-     * 参数日志的回调构建器
+     * 全局：参数日志的回调构建器
      */
     private Class<? extends LogCallbackBuilder> callback = DefaultLogCallbackBuilder.class;
 

@@ -1,13 +1,13 @@
 package vip.wangjc.log.auto.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import vip.wangjc.log.builder.callback.DefaultLogCallbackBuilder;
+import vip.wangjc.log.builder.callback.abstracts.LogCallbackBuilder;
 import vip.wangjc.log.builder.formatter.DefaultThrowingLogFormatterBuilder;
 import vip.wangjc.log.builder.formatter.abstracts.AbstractThrowingLogFormatterBuilder;
-import vip.wangjc.log.builder.callback.abstracts.LogCallbackBuilder;
-import vip.wangjc.log.builder.callback.DefaultLogCallbackBuilder;
 
 /**
- * 异常日志的配置文件
+ * 全局：异常日志的配置文件
  * @author wangjc
  * @title: LogProperties
  * @projectName wangjc-vip-log-starter
@@ -17,12 +17,12 @@ import vip.wangjc.log.builder.callback.DefaultLogCallbackBuilder;
 public class LogThrowingProperties {
 
     /**
-     * 异常日志格式化的构建器
+     * 全局：异常日志格式化的构建器
      */
     private Class<? extends AbstractThrowingLogFormatterBuilder> formatter = DefaultThrowingLogFormatterBuilder.class;
 
     /**
-     * 异常日志的回调构建器
+     * 全局：异常日志的回调构建器
      */
     private Class<? extends LogCallbackBuilder> callback = DefaultLogCallbackBuilder.class;
 
