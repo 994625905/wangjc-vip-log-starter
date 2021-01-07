@@ -1,5 +1,9 @@
 package vip.wangjc.log.template;
 
+import javassist.ClassClassPath;
+import javassist.ClassPool;
+import javassist.CtMethod;
+import javassist.NotFoundException;
 import org.aopalliance.intercept.MethodInvocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,10 +23,14 @@ import vip.wangjc.log.builder.formatter.abstracts.AbstractThrowingLogFormatterBu
 import vip.wangjc.log.entity.LogLevel;
 import vip.wangjc.log.entity.LogMethodEntity;
 import vip.wangjc.log.entity.LogPosition;
-import vip.wangjc.log.parse.LogMethodParser;
 import vip.wangjc.log.util.LogUtil;
 
+import javax.annotation.PostConstruct;
 import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author wangjc
@@ -47,6 +55,17 @@ public class LogTemplate {
         this.logParamProperties = logParamProperties;
         this.logResultProperties = logResultProperties;
         this.logThrowingProperties = logThrowingProperties;
+    }
+
+    /**
+     * 类池
+     */
+    private ClassPool CLASS_POOL;
+
+    @PostConstruct
+    public void init(){
+        this.CLASS_POOL = new ClassPool(true);
+        this.CLASS_POOL.insertClassPath(new ClassClassPath(LogTemplate.class));
     }
 
     /**
@@ -266,7 +285,7 @@ public class LogTemplate {
      * @return
      */
     private LogPosition compareLogPosition(LogPosition position, LogPosition comparePosition){
-        if(position.getSort() >= comparePosition.getSort()){
+        if(position.getSort() <= comparePosition.getSort()){
             return position;
         }
         return null;
@@ -280,8 +299,48 @@ public class LogTemplate {
      */
     private LogMethodEntity getLogMethodEntity(MethodInvocation methodInvocation, LogPosition position){
         if(position == null){
-            return LogMethodParser.getMethodInfo(methodInvocation, LogMethodEntity.NATIVE_LINE_NUMBER);
+            return this.getMethodInfo(methodInvocation, LogMethodEntity.NATIVE_LINE_NUMBER);
         }
-        return LogMethodParser.getMethodInfo(methodInvocation);
+        return this.getMethodInfo(methodInvocation);
     }
+
+    /**
+     * 获取方法信息
+     * @param methodInvocation
+     * @return
+     */
+    private LogMethodEntity getMethodInfo(MethodInvocation methodInvocation) {
+        try {
+            Method method = methodInvocation.getMethod();
+            CtMethod ctMethod = this.CLASS_POOL.get(method.getDeclaringClass().getName()).getDeclaredMethod(method.getName());
+            int lineNumber = ctMethod.getMethodInfo().getLineNumber(0);
+            return getMethodInfo(methodInvocation, lineNumber);
+        } catch (NotFoundException e) {
+            return getMethodInfo(methodInvocation, LogMethodEntity.NATIVE_LINE_NUMBER);
+        }
+    }
+
+    /**
+     * 获取方法信息
+     * @param methodInvocation
+     * @param lineNumber
+     * @return
+     */
+    private LogMethodEntity getMethodInfo(MethodInvocation methodInvocation, int lineNumber){
+        Class<?> declaringClass = methodInvocation.getMethod().getDeclaringClass();
+        Parameter[] parameters = methodInvocation.getMethod().getParameters();
+        Object[] arguments = methodInvocation.getArguments();
+
+        List<String> paramNames = new ArrayList<>(parameters.length);
+        List<Object> paramValues = new ArrayList<>(arguments.length);
+
+        for(Parameter param:parameters){
+            paramNames.add(param.getName());
+        }
+        for(Object arg:arguments){
+            paramValues.add(arg);
+        }
+        return new LogMethodEntity(declaringClass.getName(), declaringClass.getSimpleName(), methodInvocation.getMethod().getName(), paramNames, paramValues, lineNumber);
+    }
+
 }

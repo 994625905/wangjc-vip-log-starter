@@ -1,7 +1,5 @@
 package vip.wangjc.log.builder.formatter;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import vip.wangjc.log.builder.formatter.abstracts.AbstractThrowingLogFormatterBuilder;
 import vip.wangjc.log.entity.LogMethodEntity;
 
@@ -13,18 +11,15 @@ import vip.wangjc.log.entity.LogMethodEntity;
  */
 public class DefaultThrowingLogFormatterBuilder extends AbstractThrowingLogFormatterBuilder {
 
-    private final static Logger logger = LoggerFactory.getLogger(DefaultThrowingLogFormatterBuilder.class);
-
     @Override
     public void format(String name, LogMethodEntity entity, Throwable throwable) {
 
-        StringBuffer buffer = createInfoBuilder(name, entity);
+        StringBuffer buffer = this.createThrowingLogInfoBuffer(name, entity);
 
-        buffer.insert(0,"异常日志——");
         buffer.append("异常信息：[");
         buffer.append(throwable.getLocalizedMessage());
         buffer.append("]");
 
-        this.print(logger, buffer.toString(), throwable);
+        this.print(buffer.toString(), throwable);
     }
 }

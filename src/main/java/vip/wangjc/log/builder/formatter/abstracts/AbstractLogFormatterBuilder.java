@@ -30,4 +30,17 @@ public abstract class AbstractLogFormatterBuilder extends BaseAbstractLogFormatt
      * @param throwable：异常
      */
     public abstract void format(String name, LogMethodEntity entity, Throwable throwable);
+
+    /**
+     * 创建日志信息的buffer
+     * @param name
+     * @param entity
+     * @return
+     */
+    public StringBuffer createLogInfoBuffer(String name, LogMethodEntity entity){
+        StringBuffer buffer = this.createInfoBuffer(name, entity);
+
+        buffer.insert(0,"全局日志");
+        return buffer;
+    }
 }

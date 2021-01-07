@@ -20,4 +20,17 @@ public abstract class AbstractResultLogFormatterBuilder extends BaseAbstractLogF
      * @param result：返回结果
      */
     public abstract void format(LogLevel level, String name, LogMethodEntity entity, Object result);
+
+    /**
+     * 创建结果日志信息的buffer
+     * @param name
+     * @param entity
+     * @return
+     */
+    public StringBuffer createResultLogInfoBuffer(String name, LogMethodEntity entity){
+        StringBuffer buffer = this.createInfoBuffer(name, entity);
+
+        buffer.insert(0,"结果日志");
+        return buffer;
+    }
 }

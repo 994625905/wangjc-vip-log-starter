@@ -18,4 +18,17 @@ public abstract class AbstractThrowingLogFormatterBuilder extends BaseAbstractLo
      * @param throwable：异常
      */
     public abstract void format(String name, LogMethodEntity entity, Throwable throwable);
+
+    /**
+     * 创建异常日志信息的buffer
+     * @param name
+     * @param entity
+     * @return
+     */
+    public StringBuffer createThrowingLogInfoBuffer(String name, LogMethodEntity entity){
+        StringBuffer buffer = this.createInfoBuffer(name, entity);
+
+        buffer.insert(0,"异常日志");
+        return buffer;
+    }
 }

@@ -21,4 +21,17 @@ public abstract class AbstractParamLogFormatterBuilder extends BaseAbstractLogFo
      * @param paramNamesFilter 参数过滤列表
      */
     public abstract void format(LogLevel level, String name, LogMethodEntity entity, Object[] args, String[] paramNamesFilter);
+
+    /**
+     * 创建参数日志信息的buffer
+     * @param name
+     * @param entity
+     * @return
+     */
+    public StringBuffer createParamLogInfoBuffer(String name, LogMethodEntity entity){
+        StringBuffer buffer = this.createInfoBuffer(name, entity);
+
+        buffer.insert(0,"参数日志");
+        return buffer;
+    }
 }
